@@ -3,12 +3,14 @@ import dayjs from 'dayjs'
 import { useEffect, useState } from 'react'
 import { WindDirectionIcon } from './Weather.styled'
 import { useWeather, WeatherInterface } from '../../features/weather/useWeather'
-import { useSessionsStore } from '../../store/useSessionStore'
+import { useSliceMergeStore } from '../../store/useSliceMergeStore'
 
 export default function Weather() {
     const [filteredWeather, setFilteredWeather] = useState<WeatherInterface[]>([])
-    const { selectedSession } = useSessionsStore()
-    const { data, isSuccess } = useWeather(selectedSession?.meeting_key || 0, selectedSession?.session_key || 0)
+    const {
+        sessionState: { meetingKey, sessionKey },
+    } = useSliceMergeStore()
+    const { data, isSuccess } = useWeather(meetingKey || 0, sessionKey || 0)
 
     const headers = ['강수', '바람의 방향', '바람 속도', '트랙 온도', '습도', '기온', '날짜']
     const keys: (keyof WeatherInterface)[] = [

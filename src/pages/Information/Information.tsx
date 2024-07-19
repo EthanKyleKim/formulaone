@@ -1,14 +1,20 @@
 import Weather from '../../components/Weather/Weather'
 import { SessionInterface, useSessions } from '../../features/sessions/useSessions'
-import { useMeetingsStore } from '../../store/useMeetingsStore'
-import { useSessionsStore } from '../../store/useSessionStore'
+import { useSliceMergeStore } from '../../store/useSliceMergeStore'
+
 import { StickyHeader, Wrapper } from '../../style/Common.styled'
 import { StyledLi, StyledUl } from '../Meeting/Meeting.styled'
 
 export default function Information() {
-    const { selectedMeeting } = useMeetingsStore()
-    const { handleSessionClick } = useSessionsStore()
-    const { data, isSuccess } = useSessions(selectedMeeting?.country_name || '')
+    const {
+        meetingState: { countryName },
+    } = useSliceMergeStore()
+    const { data, isSuccess } = useSessions(countryName || '')
+    const { setSelectedSession } = useSliceMergeStore()
+
+    const handleSessionClick = (session: SessionInterface) => {
+        setSelectedSession(session)
+    }
 
     return (
         <Wrapper width={'1200px'} height={'800px'}>

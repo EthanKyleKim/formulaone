@@ -24,7 +24,7 @@ const fetchWeather = async (meeting_key: number, session_key: number): Promise<W
 
 export const useWeather = (meeting_key: number, session_key: number) => {
     return useQuery<WeatherInterface[], Error>({
-        queryKey: ['sessions', meeting_key, session_key],
+        queryKey: ['weather', meeting_key, session_key],
         queryFn: () => fetchWeather(meeting_key, session_key),
         enabled: !!meeting_key && !!session_key,
     })
