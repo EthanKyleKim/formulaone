@@ -1,4 +1,3 @@
-import { cache } from './../../../node_modules/@types/three/examples/jsm/nodes/core/CacheNode.d'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -27,6 +26,6 @@ export const useMeetings = () => {
         queryKey: ['meetings'],
         queryFn: fetchMeetings,
         select: (data) => data.reverse(), // 최신순으로 정렬
-        staleTime: 300000
+        staleTime: 300000,
     })
 }

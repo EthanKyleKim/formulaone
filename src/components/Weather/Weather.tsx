@@ -2,10 +2,14 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import dayjs from 'dayjs'
 import { useEffect, useState } from 'react'
 import { WindDirectionIcon } from './Weather.styled'
-import { WeatherInterface } from '../../features/weather/useWeather'
+import { useWeather, WeatherInterface } from '../../features/weather/useWeather'
+import { useSessionsStore } from '../../store/useSessionStore'
 
-export default function Weather({ weather }: WeatherInterface) {
+export default function Weather() {
     const [filteredWeather, setFilteredWeather] = useState<WeatherInterface[]>([])
+    const { selectedSession } = useSessionsStore()
+    const { data, isSuccess } = useWeather(selectedSession?.meeting_key || 0, selectedSession?.session_key || 0)
+
     const headers = ['강수', '바람의 방향', '바람 속도', '트랙 온도', '습도', '기온', '날짜']
     const keys: (keyof WeatherInterface)[] = [
         'rainfall',
@@ -18,12 +22,12 @@ export default function Weather({ weather }: WeatherInterface) {
     ]
 
     const filterDate = () => {
-        if (weather.length === 0) return
+        if (!data || data.length === 0) return
 
         const result: WeatherInterface[] = []
-        let lastTime = dayjs(weather[0].date) // 첫 번째 값
+        let lastTime = dayjs(data[0].date) // 첫 번째 값
 
-        weather.forEach((item) => {
+        data.forEach((item) => {
             const currentTime = dayjs(item.date)
             if (currentTime.diff(lastTime, 'minute') >= 5) {
                 result.push({ ...item, date: currentTime.format('HH:mm') })
@@ -44,7 +48,7 @@ export default function Weather({ weather }: WeatherInterface) {
 
     useEffect(() => {
         filterDate()
-    }, [])
+    }, [data, isSuccess])
 
     return (
         <div>
