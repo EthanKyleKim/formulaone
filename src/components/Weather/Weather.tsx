@@ -1,8 +1,8 @@
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import dayjs from 'dayjs'
-import { useEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { WindDirectionIcon } from './Weather.styled'
-import { useWeather, WeatherInterface } from '../../features/weather/useWeather'
+import { useFetchWeather, WeatherInterface } from '../../features/weather/useWeather'
 import { useSliceMergeStore } from '../../store/useSliceMergeStore'
 
 export default function Weather() {
@@ -10,7 +10,7 @@ export default function Weather() {
     const {
         sessionState: { meetingKey, sessionKey },
     } = useSliceMergeStore()
-    const { data, isSuccess } = useWeather(meetingKey || 0, sessionKey || 0)
+    const { data, isSuccess } = useFetchWeather(meetingKey || 0, sessionKey || 0)
 
     const headers = ['강수', '바람의 방향', '바람 속도', '트랙 온도', '습도', '기온', '날짜']
     const keys: (keyof WeatherInterface)[] = [
@@ -48,22 +48,23 @@ export default function Weather() {
         return item[key]
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         filterDate()
     }, [data, isSuccess])
 
     return (
         <div>
-            {headers.map((header, index) => (
-                <div style={{ display: 'flex', marginBottom: '10px' }} key={index}>
-                    <div style={{ fontWeight: 'bold', width: '80px' }}>{header}</div>
-                    {filteredWeather.map((item, idx) => (
-                        <div key={idx} style={{ marginRight: '15px', width: '100px', textAlign: 'center' }}>
-                            {renderCell(item, keys[index])}
-                        </div>
-                    ))}
-                </div>
-            ))}
+            {isSuccess &&
+                headers.map((header, index) => (
+                    <div style={{ display: 'flex', marginBottom: '10px' }} key={header + index}>
+                        <div style={{ fontWeight: 'bold', width: '80px' }}>{header}</div>
+                        {filteredWeather.map((item) => (
+                            <div key={item.date} style={{ marginRight: '15px', width: '100px', textAlign: 'center' }}>
+                                {renderCell(item, keys[index])}
+                            </div>
+                        ))}
+                    </div>
+                ))}
         </div>
     )
 }

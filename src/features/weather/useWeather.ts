@@ -1,4 +1,4 @@
-// src/features/sessions/useSessions.ts
+// src/features/sessions/useSessionsFetch.ts
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -22,7 +22,7 @@ const fetchWeather = async (meeting_key: number, session_key: number): Promise<W
     return response.data
 }
 
-export const useWeather = (meeting_key: number, session_key: number) => {
+export const useFetchWeather = (meeting_key: number, session_key: number) => {
     return useQuery<WeatherInterface[], Error>({
         queryKey: ['weather', meeting_key, session_key],
         queryFn: () => fetchWeather(meeting_key, session_key),

@@ -21,7 +21,7 @@ const fetchMeetings = async (): Promise<MeetingInterface[]> => {
     return response.data
 }
 
-export const useMeetings = () => {
+export const useFetchMeetings = () => {
     return useQuery<MeetingInterface[], Error>({
         queryKey: ['meetings'],
         queryFn: fetchMeetings,

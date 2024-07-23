@@ -1,4 +1,4 @@
-// src/features/sessions/useSessions.ts
+// src/features/sessions/useSessionsFetch.ts
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -24,7 +24,7 @@ const fetchSessions = async (country_name: string): Promise<SessionInterface[]> 
     return response.data
 }
 
-export const useSessions = (country_name: string) => {
+export const useSessionsFetch = (country_name: string) => {
     return useQuery<SessionInterface[], Error>({
         queryKey: ['sessions', country_name],
         queryFn: () => fetchSessions(country_name),
