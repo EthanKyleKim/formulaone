@@ -1,3 +1,3 @@
 # Formula One Informaion Site
-## React + TypeScript + Vite + Zustand + React Query
+## React + TypeScript + Next + Zustand + React Query
 
