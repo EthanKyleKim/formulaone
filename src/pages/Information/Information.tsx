@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Weather from '../../components/Weather/Weather'
 import { SessionInterface, useSessionsFetch } from '../../features/sessions/useSessions'
-import { useSliceMergeStore } from '../../store/useSliceMergeStore'
+import { useSliceMergeStore } from '../../stores/useSliceMergeStore'
 
 import { StickyHeader, Wrapper } from '../../style/Common.styled'
 import { StyledLi, StyledUl } from '../Meeting/Meeting.styled'

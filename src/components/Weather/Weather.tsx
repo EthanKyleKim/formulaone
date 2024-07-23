@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import { useLayoutEffect, useState } from 'react'
 import { WindDirectionIcon } from './Weather.styled'
 import { useFetchWeather, WeatherInterface } from '../../features/weather/useWeather'
-import { useSliceMergeStore } from '../../store/useSliceMergeStore'
+import { useSliceMergeStore } from '../../stores/useSliceMergeStore'
 
 export default function Weather() {
     const [filteredWeather, setFilteredWeather] = useState<WeatherInterface[]>([])

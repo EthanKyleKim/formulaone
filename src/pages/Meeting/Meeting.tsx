@@ -1,5 +1,5 @@
 import { MeetingInterface, useFetchMeetings } from '../../features/meetings/useMeetings'
-import { useSliceMergeStore } from '../../store/useSliceMergeStore'
+import { useSliceMergeStore } from '../../stores/useSliceMergeStore'
 import { StickyHeader, Wrapper } from '../../style/Common.styled'
 import { StyledLi, StyledUl } from './Meeting.styled'
 import { useState } from 'react'

@@ -1,14 +1,11 @@
 // LeclercRadio.tsx
-
-import { useNavigate } from 'react-router-dom'
+import Link from 'next/link'
 import Button from '../../components/Button/Button'
 import { Line, RadioContainer, Message, Title, AudioWave } from './RadioMessage.styled'
 
 function RadioMessage() {
-    const navigate = useNavigate()
-
     const handleButtonClick = () => {
-        navigate('/main')
+        <Link href={'/main'}></Link>
     }
 
     const heights = [
