@@ -4,10 +4,6 @@ import Button from '../../components/Button/Button'
 import { Line, RadioContainer, Message, Title, AudioWave } from './RadioMessage.styled'
 
 function RadioMessage() {
-    const handleButtonClick = () => {
-        <Link href={'/main'}></Link>
-    }
-
     const heights = [
         10, 22, 25, 17, 22, 30, 28, 24, 26, 28, 30, 23, 24, 16, 28, 30, 26, 24, 26, 18, 20, 18, 26, 14, 22, 10, 24, 32,
         24, 32, 30, 28, 26, 30, 12, 20, 18, 16, 14, 12, 10,
@@ -30,7 +26,9 @@ function RadioMessage() {
                 <br />
                 환영합니다."
             </Message>
-            <Button onClick={() => handleButtonClick()} text="F1 INFO로 이동" />
+            <Link href={'/information'}>
+                <Button text="F1 INFO로 이동" />
+            </Link>
         </RadioContainer>
     )
 }

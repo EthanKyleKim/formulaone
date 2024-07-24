@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useSuspenseQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export interface MeetingInterface {
@@ -22,7 +22,7 @@ const fetchMeetings = async (): Promise<MeetingInterface[]> => {
 }
 
 export const useFetchMeetings = () => {
-    return useQuery<MeetingInterface[], Error>({
+    return useSuspenseQuery<MeetingInterface[], Error>({
         queryKey: ['meetings'],
         queryFn: fetchMeetings,
         select: (data) => data.reverse(), // 최신순으로 정렬
