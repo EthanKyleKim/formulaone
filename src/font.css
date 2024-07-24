@@ -1,7 +1,7 @@
 /* src/global.css */
 @font-face {
     font-family : 'Formula1';
-    src         : url('./assets/fonts/Formula1-Regular.ttf') format('truetype');
+    src         : url('../public/fonts/Formula1-Regular.ttf');
     font-weight : normal;
     font-style  : normal;
     font-display: swap;
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family : 'Formula1';
-    src         : url('./assets/fonts/Formula1-Bold.ttf') format('truetype');
+    src         : url('../public/fonts/Formula1-Bold.ttf');
     font-weight : bold;
     font-style  : normal;
     font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
     font-family : 'Formula1';
-    src         : url('./assets/fonts/Formula1-Black.ttf') format('truetype');
+    src         : url('../public/fonts/Formula1-Black.ttf');
     font-weight : 900;
     font-style  : normal;
     font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
     font-family : 'Formula1';
-    src         : url('./assets/fonts/Formula1-Wide.ttf') format('truetype');
+    src         : url('../public/fonts/Formula1-Wide.ttf');
     font-weight : normal;
     font-stretch: expanded;
     font-display: swap;

@@ -1,12 +1,18 @@
-'use client'
-
-import { Suspense } from 'react'
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
+import { fetchMeetings } from '../../features/meetings/useMeetings'
 import Main from '../../containers/Main/Main'
 
-export default function Page() {
-    return (
-        <Suspense fallback={<p style={{ textAlign: 'center' }}>loading... on initial request</p>}>
-            <Main />
-        </Suspense>
-    )
+export default async function InformationPage() {
+  const queryClient = new QueryClient()
+
+  await queryClient.prefetchQuery({
+    queryKey: ['meetings'],
+    queryFn: fetchMeetings,
+  })
+
+  return (
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Main />
+    </HydrationBoundary>
+  )
 }
