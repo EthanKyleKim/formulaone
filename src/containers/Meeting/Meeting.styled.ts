@@ -26,10 +26,10 @@ export const StyledLi = styled.li<StyledLiProps>`
     transition: background-color 0.3s, color 0.3s;
     width: ${({ width }) => width};
     height: ${({ height }) => height};
-    background-color: ${({ $isSelected }) => ($isSelected ? '#ff4b4b' : '#2a2a2a')}; // 선택된 경우의 배경색
+    background-color: ${({ $isSelected }) => ($isSelected ? '#FF1E00' : '#2a2a2a')}; // 선택된 경우의 배경색
 
     &:hover {
-        background-color: #ff4b4b;
-        color: #fff;
+        background-color: #FF1E00;
+        color: #ddd;
     }
 `

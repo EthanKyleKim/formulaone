@@ -1,10 +1,10 @@
 'use client'
 
+import { useState } from 'react'
+import CardWithHeader from '../../components/Molecule/CardWithHeader/CardWithHeader'
 import { MeetingInterface, useFetchMeetings } from '../../features/meetings/useMeetings'
 import { useSliceMergeStore } from '../../stores/useSliceMergeStore'
-import { StickyHeader, Wrapper } from '../../style/Common.styled'
 import { StyledLi, StyledUl } from './Meeting.styled'
-import { useState } from 'react'
 
 export default function Meeting() {
   const { setSelectedMeeting } = useSliceMergeStore()
@@ -31,9 +31,8 @@ export default function Meeting() {
   }
 
   return (
-    <Wrapper width={'500px'} height={'600px'}>
-      <StickyHeader>2024 F1 GP 일정</StickyHeader>
+    <CardWithHeader headerText="2024 F1 GP 일정" width="20%" height="800px">
       <StyledUl>{meetingsList()}</StyledUl>
-    </Wrapper>
+    </CardWithHeader>
   )
 }

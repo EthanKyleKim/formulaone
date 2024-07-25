@@ -5,8 +5,10 @@ import Weather from '../../components/Weather/Weather'
 import { SessionInterface, useSessionsFetch } from '../../features/sessions/useSessions'
 import { useSliceMergeStore } from '../../stores/useSliceMergeStore'
 
-import { StickyHeader, Wrapper } from '../../style/Common.styled'
+import { StickyHeader, Wrapper } from '../../styles/Common.styled'
 import { StyledLi, StyledUl } from '../Meeting/Meeting.styled'
+import Box from '../../components/Atoms/Box/Box'
+import CardWithHeader from '../../components/Molecule/CardWithHeader/CardWithHeader'
 
 export default function Information() {
   const [isSelectedSession, setIsSelectedSession] = useState<string | null>(null)
@@ -15,6 +17,10 @@ export default function Information() {
     setSelectedSession,
   } = useSliceMergeStore()
   const { data, isSuccess } = useSessionsFetch(countryName || '')
+
+  useEffect(() => {
+    setIsSelectedSession(null)
+  }, [countryName])
 
   const handleSessionClick = (session: SessionInterface) => {
     setSelectedSession(session)
@@ -39,22 +45,10 @@ export default function Information() {
       : null
   }
 
-  useEffect(() => {
-    setIsSelectedSession(null)
-  }, [countryName])
-
   return (
-    <Wrapper width={'1200px'} height={'800px'}>
-      <StickyHeader>Drivers</StickyHeader>
-
-      {isSuccess && (
-        <div style={{ display: 'flex' }}>
-          <StyledUl>{sessionsList()}</StyledUl>
-          <div>
-            <Weather />
-          </div>
-        </div>
-      )}
-    </Wrapper>
+    <CardWithHeader headerText="세션 정보" width="80%" height="800px">
+      <StyledUl>{sessionsList()}</StyledUl>
+      <Weather />
+    </CardWithHeader>
   )
 }
