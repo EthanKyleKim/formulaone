@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Colors } from '../../../styles/Colors'
 
 interface BoxProps {
   padding?: string
@@ -15,6 +16,7 @@ interface BoxProps {
   width?: string
   height?: string
   overflow?: string
+  maxWidth?: string
   maxHeight?: string
 }
 
@@ -34,6 +36,7 @@ export const StyledBox = styled.div<BoxProps>`
   width: ${({ width }) => width || 'auto'};
   height: ${({ height }) => height || 'auto'};
   overflow: ${({ overflow }) => overflow || 'auto'};
+  max-width: ${({ maxWidth }) => maxWidth || 'none'};
   max-height: ${({ maxHeight }) => maxHeight || 'none'};
 
   &::-webkit-scrollbar {
@@ -42,7 +45,7 @@ export const StyledBox = styled.div<BoxProps>`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #555;
+    background-color: ${Colors.gray750};
     border-radius: 8px;
   }
 

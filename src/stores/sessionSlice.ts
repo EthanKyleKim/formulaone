@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand'
-import { SessionInterface } from '../features/sessions/useSessionsFetch'
+import { SessionInterface } from '../features/Sessions/useSessionsFetch'
 
 export interface sessionSliceInterface {
     sessionState: {

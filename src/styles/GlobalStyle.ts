@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     min-width: 320px;
     min-height: 100vh;
-    background-color: ${Colors.backgroundColor};
+    background-color: ${Colors.secondary};
   }
 `
 

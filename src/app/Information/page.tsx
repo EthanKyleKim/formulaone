@@ -1,5 +1,5 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
-import { fetchMeetings } from '../../features/meetings/useMeetings'
+import { fetchMeetings } from '../../features/Meetings/useMeetings'
 import Main from '../../containers/Main/Main'
 
 export default async function InformationPage() {

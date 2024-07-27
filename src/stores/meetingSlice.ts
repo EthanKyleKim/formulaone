@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand'
-import { MeetingInterface } from '../features/meetings/useFetchMeetings'
+import { MeetingInterface } from '../features/Meetings/useFetchMeetings'
 import { sessionSliceInterface } from './sessionSlice'
 
 export interface MeetingSliceInterface {

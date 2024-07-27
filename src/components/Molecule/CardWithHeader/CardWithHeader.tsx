@@ -15,10 +15,8 @@ interface CardWithHeaderProps {
 export default function CardWithHeader({ headerText, children, width, height, maxHeight }: CardWithHeaderProps) {
   return (
     <div style={{ width, margin: '8px' }}>
-      <StickyHeader backgroundColor={Colors.primary} color={Colors.white}>
-        {headerText}
-      </StickyHeader>
-      <Box backgroundColor={Colors.backgroundColor} borderTopRadius="0" height={height} maxHeight={maxHeight}>
+      <StickyHeader backgroundColor={Colors.primary}>{headerText}</StickyHeader>
+      <Box backgroundColor={Colors.gray870} borderTopRadius="0" height={height} maxHeight={maxHeight}>
         {children}
       </Box>
     </div>

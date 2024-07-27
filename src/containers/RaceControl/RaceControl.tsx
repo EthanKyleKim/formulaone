@@ -7,7 +7,7 @@ import {
     TimeLineTimes,
     TimeLineWrapper,
     VerticalLine,
-} from '../../components/TimeLine/TimeLine.styled'
+} from '../../components/Part/TimeLine/TimeLine.styled'
 
 export default function RaceControl() {
     const { raceControl } = useSelector((state: RootState) => state.raceControl)

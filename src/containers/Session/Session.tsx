@@ -1,4 +1,4 @@
-import { SessionInterface } from '../../features/sessions/sessionsSlice'
+import { SessionInterface } from '../../features/Sessions/sessionsSlice'
 
 interface SessionProps {
     selectedSession: SessionInterface

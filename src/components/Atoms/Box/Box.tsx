@@ -14,10 +14,12 @@ interface BoxProps {
   flexDirection?: string
   justifyContent?: string
   alignItems?: string
+  textAlign?: string
   width?: string
   height?: string
   overflow?: string
   maxHeight?: string
+  maxWidth?: string
 }
 
 export default function Box({
@@ -36,6 +38,7 @@ export default function Box({
   width,
   height,
   overflow = 'auto',
+  maxWidth,
   maxHeight,
 }: BoxProps) {
   return (
@@ -54,6 +57,7 @@ export default function Box({
       width={width}
       height={height}
       overflow={overflow}
+      maxWidth={maxWidth}
       maxHeight={maxHeight}
     >
       {children}

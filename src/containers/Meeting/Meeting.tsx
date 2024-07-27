@@ -1,10 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { StyledList, StyledListItem } from '../../components/Atoms/List/List.styled'
 import CardWithHeader from '../../components/Molecule/CardWithHeader/CardWithHeader'
-import { MeetingInterface, useFetchMeetings } from '../../features/meetings/useMeetings'
+import { MeetingInterface, useFetchMeetings } from '../../features/Meetings/useMeetings'
 import { useSliceMergeStore } from '../../stores/useSliceMergeStore'
-import { StyledLi, StyledUl } from './Meeting.styled'
+import Typography from '../../components/Atoms/Typography/Typography'
 
 export default function Meeting() {
   const { setSelectedMeeting } = useSliceMergeStore()
@@ -19,20 +20,20 @@ export default function Meeting() {
   const meetingsList = () => {
     return isSuccess
       ? data.map((meeting: MeetingInterface) => (
-          <StyledLi
+          <StyledListItem
             key={meeting.meeting_key}
             onClick={() => handleMeetingClick(meeting)}
             $isSelected={meeting.meeting_key === isSelectedMeetingKey} // 선택 여부 전달
           >
-            {meeting.meeting_official_name} - {meeting.location} ({meeting.country_name})
-          </StyledLi>
+            <Typography variant="body1">{meeting.meeting_official_name}</Typography>
+          </StyledListItem>
         ))
       : null
   }
 
   return (
-    <CardWithHeader headerText="2024 F1 GP 일정" width="20%" height="800px">
-      <StyledUl>{meetingsList()}</StyledUl>
+    <CardWithHeader headerText="2024 F1 GP 일정" width="18%" height="800px">
+      <StyledList>{meetingsList()}</StyledList>
     </CardWithHeader>
   )
 }
