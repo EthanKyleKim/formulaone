@@ -24,7 +24,7 @@ export default function SessionsList() {
   }
 
   return isSuccess ? (
-    <Box width="250px" margin="8px" backgroundColor={Colors.gray750}>
+    <Box width="10%" maxHeight="500px" margin="8px" backgroundColor={Colors.gray750}>
       <StyledList>
         {data.map((session: SessionInterface) => {
           return (
