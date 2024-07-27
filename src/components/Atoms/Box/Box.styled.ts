@@ -45,12 +45,12 @@ export const StyledBox = styled.div<BoxProps>`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${Colors.gray750};
+    background-color: ${Colors.gray600};
     border-radius: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: #1a1a1a;
+    background-color: ${Colors.secondary};
     border-radius: 8px;
   }
 `
