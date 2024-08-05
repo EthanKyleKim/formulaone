@@ -1,6 +1,5 @@
 'use client'
 
-import Weather from '../../components/Part/Weather/Weather'
 import CardWithHeader from '../../components/Molecule/CardWithHeader/CardWithHeader'
 import SessionsList from '../../components/Part/SessionsList/SessionsList'
 import DriversList from '../../components/Part/DriversList/DriversList'

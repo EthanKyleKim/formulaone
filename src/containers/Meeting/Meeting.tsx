@@ -9,7 +9,7 @@ import Typography from '../../components/Atoms/Typography/Typography'
 
 export default function Meeting() {
   const { setSelectedMeeting } = useSliceMergeStore()
-  const [isSelectedMeetingKey, setIsSelectedMeeting] = useState<string | null>(null)
+  const [isSelectedmeeting_key, setIsSelectedMeeting] = useState<string | null>(null)
   const { data, isSuccess } = useFetchMeetings()
 
   const handleMeetingClick = (meeting: MeetingInterface) => {
@@ -27,7 +27,7 @@ export default function Meeting() {
             key={meeting.meeting_key}
             height="47px"
             onClick={() => handleMeetingClick(meeting)}
-            $isSelected={meeting.meeting_key === isSelectedMeetingKey} // 선택 여부 전달
+            $isSelected={meeting.meeting_key === isSelectedmeeting_key} // 선택 여부 전달
           >
             <Typography variant="body1">{meeting.meeting_official_name}</Typography>
           </StyledListItem>

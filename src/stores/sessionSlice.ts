@@ -3,8 +3,8 @@ import { SessionInterface } from '../features/Sessions/useSessionsFetch'
 
 export interface sessionSliceInterface {
     sessionState: {
-        meetingKey: SessionInterface['meeting_key'] | null
-        sessionKey: SessionInterface['session_key'] | null
+        meeting_key: SessionInterface['meeting_key'] | null
+        session_key: SessionInterface['session_key'] | null
     }
     setSelectedSession: (session: SessionInterface | null) => void
     resetSessionState: () => void
@@ -12,21 +12,21 @@ export interface sessionSliceInterface {
 
 export const sessionSlice: StateCreator<sessionSliceInterface> = (set) => ({
     sessionState: {
-        meetingKey: null,
-        sessionKey: null,
+        meeting_key: null,
+        session_key: null,
     },
     setSelectedSession: (session: SessionInterface | null) =>
         set({
             sessionState: {
-                meetingKey: session?.meeting_key || null,
-                sessionKey: session?.session_key || null,
+                meeting_key: session?.meeting_key || null,
+                session_key: session?.session_key || null,
             },
         }),
     resetSessionState: () =>
         set({
             sessionState: {
-                meetingKey: null,
-                sessionKey: null,
+                meeting_key: null,
+                session_key: null,
             },
         }),
 })
