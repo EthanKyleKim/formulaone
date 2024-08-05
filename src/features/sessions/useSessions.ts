@@ -28,7 +28,6 @@ export const useSessionsFetch = (country_name: string) => {
   return useQuery<SessionInterface[], Error>({
     queryKey: ['sessions', country_name],
     queryFn: () => fetchSessions(country_name),
-    select: (data) => data.reverse(), // 최신순으로 정렬
     enabled: !!country_name,
   })
 }

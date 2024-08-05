@@ -4,7 +4,7 @@ import axios from 'axios'
 export interface DriversInterface {
   broadcast_name: string
   country_code: string
-  driver_number: string
+  driver_number: number
   first_name: string
   full_name: string
   headshot_url: string
@@ -25,5 +25,6 @@ export const useFetchDrivers = (session_key: number) => {
   return useQuery<DriversInterface[], Error>({
     queryKey: ['drivers', session_key],
     queryFn: () => fetchDrivers(session_key),
+    enabled: !!session_key,
   })
 }

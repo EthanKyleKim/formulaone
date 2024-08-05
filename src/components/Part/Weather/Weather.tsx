@@ -12,9 +12,9 @@ import { StyledList, StyledListItem } from '../../Atoms/List/List.styled'
 export default function Weather() {
   const [filteredWeather, setFilteredWeather] = useState<WeatherInterface[]>([])
   const {
-    sessionState: { meetingKey, sessionKey },
+    sessionState: { meeting_key, session_key },
   } = useSliceMergeStore()
-  const { data, isSuccess } = useFetchWeather(meetingKey || 0, sessionKey || 0)
+  const { data, isSuccess } = useFetchWeather(meeting_key || 0, session_key || 0)
 
   const filterDate = () => {
     if (!data || data.length === 0) return
