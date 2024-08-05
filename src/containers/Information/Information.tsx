@@ -7,18 +7,10 @@ import DriversList from '../../components/Part/DriversList/DriversList'
 
 export default function Information() {
   return (
-    <CardWithHeader headerText="세션 정보" width="82%" height="800px">
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div style={{ display: 'flex' }}>
-          <SessionsList />
-          <DriversList />
-        </div>
-        <div>
-        </div>
-        <div>
-          <Weather />
-        </div>
-      </div>
+    <CardWithHeader headerText="세션 정보" width="77vw" height="100vh">
+      <SessionsList />
+      <DriversList />
+      {/* <Weather /> */}
     </CardWithHeader>
   )
 }

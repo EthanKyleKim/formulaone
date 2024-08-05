@@ -24,24 +24,22 @@ export default function SessionsList() {
   }
 
   return isSuccess ? (
-    <Box width="10%" maxHeight="500px" margin="8px" backgroundColor={Colors.gray750}>
-      <StyledList>
-        {data.map((session: SessionInterface) => {
-          return (
-            <StyledListItem
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              key={session.session_name}
-              onClick={() => handleSessionClick(session)}
-              $isSelected={session.session_name === isSelectedSession} // 선택 여부 전달
-              height="70px"
-            >
-              <Typography variant="body1">{session.session_name}</Typography>
-            </StyledListItem>
-          )
-        })}
-      </StyledList>
-    </Box>
+    <StyledList display="flex">
+      {data.map((session: SessionInterface) => {
+        return (
+          <StyledListItem
+            width="100%"
+            height="30px"
+            display="flex"
+            alignItems="center"
+            key={session.session_name}
+            onClick={() => handleSessionClick(session)}
+            $isSelected={session.session_name === isSelectedSession} // 선택 여부 전달
+          >
+            <Typography variant="body1">{session.session_name}</Typography>
+          </StyledListItem>
+        )
+      })}
+    </StyledList>
   ) : null
 }
