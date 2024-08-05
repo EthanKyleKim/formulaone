@@ -8,15 +8,16 @@ interface CardWithHeaderProps {
   headerText: string
   width?: string
   height?: string
-  maxHeight?: string
   children: React.ReactNode
 }
 
-export default function CardWithHeader({ headerText, children, width, height, maxHeight }: CardWithHeaderProps) {
+export default function CardWithHeader({ headerText, children, width, height }: CardWithHeaderProps) {
+  const calculatedHeight = height ? `calc(${height} - 40px)` : 'calc(100vh - 40px)'
+
   return (
-    <div style={{ width, margin: '8px' }}>
+    <div style={{ width, height: `${calculatedHeight}`, display: 'flex', flexDirection: 'column' }}>
       <StickyHeader backgroundColor={Colors.primary}>{headerText}</StickyHeader>
-      <Box backgroundColor={Colors.gray870} borderTopRadius="0" height={height} maxHeight={maxHeight}>
+      <Box backgroundColor={Colors.gray870} borderTopRadius="0" height="100%">
         {children}
       </Box>
     </div>

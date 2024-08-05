@@ -8,7 +8,7 @@ interface StickyHeaderProps {
 export const StyledStickyHeader = styled.div<StickyHeaderProps>`
   position: sticky;
   top: 0;
-  height: ${({ height }) => (height ? height : '80px')};
+  height: ${({ height }) => (height ? height : '60px')};
   display: flex;
   justify-content: center;
   align-items: center;

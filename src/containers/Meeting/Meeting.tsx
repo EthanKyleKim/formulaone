@@ -17,23 +17,22 @@ export default function Meeting() {
     setIsSelectedMeeting(meeting.meeting_key) // 클릭된 항목의 키 설정
   }
 
-  const meetingsList = () => {
-    return isSuccess
-      ? data.map((meeting: MeetingInterface) => (
+  return isSuccess ? (
+    <CardWithHeader headerText="2024 F1 GP 일정" width="20vw" height="100vh">
+      <StyledList display="flex" flexDirection="column">
+        {data.map((meeting: MeetingInterface) => (
           <StyledListItem
+            display="flex"
+            alignItems="center"
             key={meeting.meeting_key}
+            height="47px"
             onClick={() => handleMeetingClick(meeting)}
             $isSelected={meeting.meeting_key === isSelectedMeetingKey} // 선택 여부 전달
           >
             <Typography variant="body1">{meeting.meeting_official_name}</Typography>
           </StyledListItem>
-        ))
-      : null
-  }
-
-  return (
-    <CardWithHeader headerText="2024 F1 GP 일정" width="18%" height="800px">
-      <StyledList>{meetingsList()}</StyledList>
+        ))}
+      </StyledList>
     </CardWithHeader>
-  )
+  ) : null
 }
