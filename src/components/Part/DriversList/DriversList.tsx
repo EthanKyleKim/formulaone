@@ -20,23 +20,29 @@ export default function DriversList() {
   return (
     isSuccess && (
       <DriversContainer>
-        {mergedData.map((driver) => (
-          <DriverCard key={driver.full_name} color={driver.team_colour}>
-            <DriverPosition>
-              <Typography variant="h1">{`${driver.position?.position}st`}</Typography>
-              {/* {driver.position?.position} */}
-            </DriverPosition>
-            <DriverImage src={driver.headshot_url} alt={driver.full_name} />
-            <DriverName>
-              <Typography variant="h4">{driver.full_name.replace(/ /g, '\n')}</Typography>
-            </DriverName>
-            <DriverTeam>
-              <Typography variant="h5" color={`#${driver.team_colour}`}>
-                {driver.team_name}
-              </Typography>
-            </DriverTeam>
-          </DriverCard>
-        ))}
+        {mergedData.map((driver) => {
+          let rankTitle = 'st'
+          if (driver.position?.position === 1) rankTitle = 'st'
+          if (driver.position?.position === 2) rankTitle = 'nd'
+          if (driver.position?.position === 3) rankTitle = 'rd'
+
+          return (
+            <DriverCard key={driver.full_name} color={driver.team_colour}>
+              <DriverPosition>
+                <Typography variant="h1">{`${driver.position?.position}${rankTitle}`}</Typography>
+              </DriverPosition>
+              <DriverImage src={driver.headshot_url} alt={driver.full_name} />
+              <DriverName>
+                <Typography variant="h4">{driver.full_name.replace(/ /g, '\n')}</Typography>
+              </DriverName>
+              <DriverTeam>
+                <Typography variant="h5" color={`#${driver.team_colour}`}>
+                  {driver.team_name}
+                </Typography>
+              </DriverTeam>
+            </DriverCard>
+          )
+        })}
       </DriversContainer>
     )
   )
