@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@react-three/fiber": "^8.16.8",
     "@reduxjs/toolkit": "^2.2.5",
     "@swc/core": "^1.6.5",
     "@swc/helpers": "^0.5.11",
@@ -49,5 +50,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "typescript": "^5.2.2"
-  }
+  },
+  "packageManager": "yarn@4.4.0"
 }
