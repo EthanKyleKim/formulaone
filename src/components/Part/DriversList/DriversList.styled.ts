@@ -13,6 +13,7 @@ export const DriversContainer = styled.div`
 `
 
 export const DriverCard = styled.div<DriverCardProps>`
+  zoom: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +25,7 @@ export const DriverCard = styled.div<DriverCardProps>`
     transform 0.3s ease,
     box-shadow 0.3s ease;
   box-sizing: border-box;
-  width: calc((100% - (4 * 16px)) / 5);
-  height: 100%;
+  width: calc((100% - (4 * 20px)) / 5);
 
   &:hover {
     transform: translateY(-5px);
@@ -47,6 +47,6 @@ export const DriverName = styled.div`
 `
 
 export const DriverTeam = styled.div<{ color?: string }>`
-  font-size: 14px;
+  padding-bottom: 20px;
   color: ${({ color }) => color};
 `

@@ -18,7 +18,7 @@ export default function Meeting() {
   }
 
   return isSuccess ? (
-    <CardWithHeader headerText="2024 F1 GP 일정" width="20vw" height="100vh">
+    <CardWithHeader headerText="2024 F1 GP 일정" width="21vw" height="93vh">
       <StyledList display="flex" flexDirection="column">
         {data.map((meeting: MeetingInterface) => (
           <StyledListItem

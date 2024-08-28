@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import { Colors } from '../../../styles/Colors'
 
 interface BoxProps {
+  top?: string
+  bottom?: string
+  left?: string
+  right?: string
+  zIndex?: string
+  position?: string
   padding?: string
   margin?: string
   backgroundColor?: string
@@ -21,6 +27,12 @@ interface BoxProps {
 }
 
 export const StyledBox = styled.div<BoxProps>`
+  position: ${({ position }) => position};
+  top: ${({ top }) => top};
+  bottom: ${({ bottom }) => bottom};
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
+  z-index: ${({ zIndex }) => zIndex};
   padding: ${({ padding }) => padding || '0'};
   margin: ${({ margin }) => margin || '0'};
   background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};

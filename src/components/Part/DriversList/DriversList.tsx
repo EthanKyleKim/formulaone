@@ -36,7 +36,7 @@ export default function DriversList() {
                 <Typography variant="h4">{driver.full_name.replace(/ /g, '\n')}</Typography>
               </DriverName>
               <DriverTeam>
-                <Typography variant="h5" color={`#${driver.team_colour}`}>
+                <Typography variant="body1" color={`#${driver.team_colour}`}>
                   {driver.team_name}
                 </Typography>
               </DriverTeam>

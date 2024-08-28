@@ -27,6 +27,7 @@ export const StyledList = styled.ul<StyledListProps>`
 `
 
 export const StyledListItem = styled.li<StyledLiProps>`
+  zoom: 80%;
   display: ${({ display }) => display || 'block'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
