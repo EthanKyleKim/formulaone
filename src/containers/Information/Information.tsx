@@ -6,7 +6,7 @@ import DriversList from '../../components/Part/DriversList/DriversList'
 
 export default function Information() {
   return (
-    <CardWithHeader headerText="세션 정보" width="77vw" height="100vh">
+    <CardWithHeader headerText="세션 정보" width="75vw" height="93vh">
       <SessionsList />
       <DriversList />
       {/* <Weather /> */}

@@ -3,6 +3,12 @@ import { StyledBox } from './Box.styled'
 
 interface BoxProps {
   children: React.ReactNode
+  top?: string
+  bottom?: string
+  left?: string
+  right?: string
+  zIndex?: string
+  position?: string
   padding?: string
   margin?: string
   backgroundColor?: string
@@ -11,6 +17,7 @@ interface BoxProps {
   borderBottomRadius?: string
   boxShadow?: string
   display?: string
+  gap?: string
   flexDirection?: string
   justifyContent?: string
   alignItems?: string
@@ -24,6 +31,12 @@ interface BoxProps {
 
 export default function Box({
   children,
+  top,
+  bottom,
+  left,
+  right,
+  zIndex,
+  position,
   padding,
   margin,
   backgroundColor,
@@ -32,6 +45,7 @@ export default function Box({
   borderBottomRadius,
   boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)',
   display,
+  gap,
   flexDirection,
   justifyContent,
   alignItems,
@@ -43,6 +57,12 @@ export default function Box({
 }: BoxProps) {
   return (
     <StyledBox
+      top={top}
+      bottom={bottom}
+      left={left}
+      right={right}
+      zIndex={zIndex}
+      position={position}
       padding={padding}
       margin={margin}
       backgroundColor={backgroundColor}
@@ -51,6 +71,7 @@ export default function Box({
       borderBottomRadius={borderBottomRadius}
       boxShadow={boxShadow}
       display={display}
+      gap={gap}
       flexDirection={flexDirection}
       justifyContent={justifyContent}
       alignItems={alignItems}

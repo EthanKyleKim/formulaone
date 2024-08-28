@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import { Colors } from '../../../styles/Colors'
 
 interface BoxProps {
+  top?: string
+  bottom?: string
+  left?: string
+  right?: string
+  zIndex?: string
+  position?: string
   padding?: string
   margin?: string
   backgroundColor?: string
@@ -10,6 +16,7 @@ interface BoxProps {
   borderBottomRadius?: string
   boxShadow?: string
   display?: string
+  gap?: string
   flexDirection?: string
   justifyContent?: string
   alignItems?: string
@@ -21,6 +28,12 @@ interface BoxProps {
 }
 
 export const StyledBox = styled.div<BoxProps>`
+  position: ${({ position }) => position};
+  top: ${({ top }) => top};
+  bottom: ${({ bottom }) => bottom};
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
+  z-index: ${({ zIndex }) => zIndex};
   padding: ${({ padding }) => padding || '0'};
   margin: ${({ margin }) => margin || '0'};
   background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
@@ -30,6 +43,7 @@ export const StyledBox = styled.div<BoxProps>`
   border-bottom-right-radius: ${({ borderRadius, borderBottomRadius }) => borderBottomRadius || borderRadius || '8px'};
   box-shadow: ${({ boxShadow }) => boxShadow || '0 4px 8px rgba(0, 0, 0, 0.1)'};
   display: ${({ display }) => display || 'block'};
+  gap: ${({ gap }) => gap};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   align-items: ${({ alignItems }) => alignItems || 'stretch'};
