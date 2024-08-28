@@ -16,6 +16,7 @@ interface BoxProps {
   borderBottomRadius?: string
   boxShadow?: string
   display?: string
+  gap?: string
   flexDirection?: string
   justifyContent?: string
   alignItems?: string
@@ -42,6 +43,7 @@ export const StyledBox = styled.div<BoxProps>`
   border-bottom-right-radius: ${({ borderRadius, borderBottomRadius }) => borderBottomRadius || borderRadius || '8px'};
   box-shadow: ${({ boxShadow }) => boxShadow || '0 4px 8px rgba(0, 0, 0, 0.1)'};
   display: ${({ display }) => display || 'block'};
+  gap: ${({ gap }) => gap};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   align-items: ${({ alignItems }) => alignItems || 'stretch'};

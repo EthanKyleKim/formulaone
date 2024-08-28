@@ -17,6 +17,7 @@ interface BoxProps {
   borderBottomRadius?: string
   boxShadow?: string
   display?: string
+  gap?: string
   flexDirection?: string
   justifyContent?: string
   alignItems?: string
@@ -44,6 +45,7 @@ export default function Box({
   borderBottomRadius,
   boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)',
   display,
+  gap,
   flexDirection,
   justifyContent,
   alignItems,
@@ -69,6 +71,7 @@ export default function Box({
       borderBottomRadius={borderBottomRadius}
       boxShadow={boxShadow}
       display={display}
+      gap={gap}
       flexDirection={flexDirection}
       justifyContent={justifyContent}
       alignItems={alignItems}

@@ -12,36 +12,38 @@ const NavBar = styled.nav`
 
 export default function Header() {
   return (
-    <Box
-      position="fixed"
-      zIndex="100"
-      top="0"
-      display="flex"
-      alignItems="center"
-      justifyContent="space-between"
-      padding="8px 24px"
-      width="calc(100% - 48px)"
-      height='60px'
-      overflow='none'
-      backgroundColor={Colors.backgroundColor}
-    >
-      <div>
-        <Typography variant="h1">F1 INFO</Typography>
-      </div>
-      <div>
-        <NavBar>
-          <Link href="/information" passHref style={{ textDecoration: 'none', marginRight: '40px' }}>
-            <Typography variant="body1" color={Colors.white}>
-              Information
-            </Typography>
-          </Link>
-          <Link href="/livesession" passHref style={{ textDecoration: 'none' }}>
-            <Typography variant="body1" color={Colors.white}>
-              LiveSession
-            </Typography>
-          </Link>
-        </NavBar>
-      </div>
-    </Box>
+    <header>
+      <Box
+        position="fixed"
+        zIndex="100"
+        top="0"
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        padding="8px 24px"
+        width="calc(100% - 48px)"
+        height="60px"
+        overflow="none"
+        backgroundColor={Colors.backgroundColor}
+      >
+        <div>
+          <Typography variant="h1">F1 INFO</Typography>
+        </div>
+        <div>
+          <NavBar>
+            <Link href="/information" passHref style={{ textDecoration: 'none', marginRight: '40px' }}>
+              <Typography variant="body1" color={Colors.white}>
+                Information
+              </Typography>
+            </Link>
+            <Link href="/livesession" passHref style={{ textDecoration: 'none' }}>
+              <Typography variant="body1" color={Colors.white}>
+                LiveSession
+              </Typography>
+            </Link>
+          </NavBar>
+        </div>
+      </Box>
+    </header>
   )
 }
