@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import Box from '../../Atoms/Box/Box'
 import { StyledList, StyledListItem } from '../../Atoms/List/List.styled'
 import Typography from '../../Atoms/Typography/Typography'
 import { SessionInterface, useSessionsFetch } from '../../../features/Sessions/useSessions'
 import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
-import { Colors } from '../../../styles/Colors'
 
 export default function SessionsList() {
   const [isSelectedSession, setIsSelectedSession] = useState<string | null>(null)

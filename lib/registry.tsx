@@ -1,3 +1,5 @@
+// https://nextjs.org/docs/app/building-your-application/styling/css-in-js#styled-components
+// Styled-Component 를 Nextjs 에서 사용하는 방법
 'use client'
 
 import React, { useState } from 'react'
