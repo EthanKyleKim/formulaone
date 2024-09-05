@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { useSuspenseQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export interface DriversInterface {
@@ -22,9 +22,8 @@ export const fetchDrivers = async (session_key: number): Promise<DriversInterfac
 }
 
 export const useFetchDrivers = (session_key: number) => {
-  return useQuery<DriversInterface[], Error>({
+  return useSuspenseQuery<DriversInterface[], Error>({
     queryKey: ['drivers', session_key],
     queryFn: () => fetchDrivers(session_key),
-    enabled: !!session_key,
   })
 }

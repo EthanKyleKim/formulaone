@@ -17,10 +17,8 @@ export interface MeetingInterface {
 }
 
 export const fetchMeetings = async (): Promise<MeetingInterface[]> => {
-  throw new Error('500 Errror')
-
-  // const response = await axios.get(`https://api.openf1.org/v1/meetings?year=2024`)
-  // return response.data
+  const response = await axios.get(`https://api.openf1.org/v1/meetings?year=2024`)
+  return response.data
 }
 
 export const useFetchMeetings = () => {
