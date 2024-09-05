@@ -1,5 +1,5 @@
 // src/features/sessions/useSessionsFetch.ts
-import { useQuery } from '@tanstack/react-query'
+import { useSuspenseQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export interface SessionInterface {
@@ -25,9 +25,8 @@ export const fetchSessions = async (country_name: string): Promise<SessionInterf
 }
 
 export const useSessionsFetch = (country_name: string) => {
-  return useQuery<SessionInterface[], Error>({
+  return useSuspenseQuery<SessionInterface[], Error>({
     queryKey: ['sessions', country_name],
     queryFn: () => fetchSessions(country_name),
-    enabled: !!country_name,
   })
 }

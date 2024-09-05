@@ -1,10 +1,16 @@
 import { StyledButton } from './Button.styeld'
 
 type ButtonProps = {
+  variant?: 'primary' | 'secondary' | 'outline'
   children: React.ReactNode
   onClick?: () => void
 }
 
-export default function Button({ children, onClick }: ButtonProps) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>
+// 버튼 컴포넌트
+export const Button = ({ variant = 'primary', children, ...props }: ButtonProps) => {
+  return (
+    <StyledButton variant={variant} {...props}>
+      {children}
+    </StyledButton>
+  )
 }

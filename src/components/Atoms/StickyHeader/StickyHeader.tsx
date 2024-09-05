@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledStickyHeader } from './StickyHeader.styled'
-import Typography from '../Typography/Typography'
+import Typography from '../../Atoms/Typography/Typography'
 
 interface StickyHeaderProps {
   backgroundColor?: string
