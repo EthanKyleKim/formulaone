@@ -23,7 +23,7 @@ export default function Meeting() {
           display="flex"
           alignItems="center"
           key={meeting.meeting_key}
-          height="47px"
+          height="80px"
           onClick={() => handleMeetingClick(meeting)}
           $isSelected={meeting.meeting_key === isSelectedmeeting_key}
         >

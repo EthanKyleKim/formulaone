@@ -30,57 +30,14 @@ interface BoxProps {
 }
 
 export default function Box({
-  children,
-  top,
-  bottom,
-  left,
-  right,
-  zIndex,
-  position,
-  padding,
-  margin,
-  backgroundColor,
   borderRadius = '8px',
-  borderTopRadius,
-  borderBottomRadius,
   boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)',
-  display,
-  gap,
-  flexDirection,
-  justifyContent,
-  alignItems,
-  width,
-  height,
   overflow = 'auto',
-  maxWidth,
-  maxHeight,
+  children,
+  ...props
 }: BoxProps) {
   return (
-    <StyledBox
-      top={top}
-      bottom={bottom}
-      left={left}
-      right={right}
-      zIndex={zIndex}
-      position={position}
-      padding={padding}
-      margin={margin}
-      backgroundColor={backgroundColor}
-      borderRadius={borderRadius}
-      borderTopRadius={borderTopRadius}
-      borderBottomRadius={borderBottomRadius}
-      boxShadow={boxShadow}
-      display={display}
-      gap={gap}
-      flexDirection={flexDirection}
-      justifyContent={justifyContent}
-      alignItems={alignItems}
-      width={width}
-      height={height}
-      overflow={overflow}
-      maxWidth={maxWidth}
-      maxHeight={maxHeight}
-    >
+    <StyledBox borderRadius={borderRadius} boxShadow={boxShadow} overflow={overflow} {...props}>
       {children}
     </StyledBox>
   )
