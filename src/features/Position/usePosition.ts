@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export interface PositionInterface {
@@ -19,12 +18,4 @@ export const fetchPosition = async ({ meeting_key, session_key }: FetchPositionP
     `https://api.openf1.org/v1/position?meeting_key=${meeting_key}&session_key=${session_key}`,
   )
   return response.data
-}
-
-export const useFetchPosition = ({ meeting_key, session_key }: FetchPositionProps) => {
-  return useQuery<PositionInterface[], Error>({
-    queryKey: ['meetings', meeting_key, session_key],
-    queryFn: () => fetchPosition({ meeting_key, session_key }),
-    enabled: !!meeting_key && !!session_key,
-  })
 }

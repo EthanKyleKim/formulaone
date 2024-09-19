@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
-import { useFetchDrivers, DriversInterface } from '../Drivers/useDrivers'
-import { useFetchPosition, PositionInterface, FetchPositionProps } from '../Position/usePosition'
+import { useMemo } from 'react'
+import { useSuspenseQueries } from '@tanstack/react-query'
+import { DriversInterface, fetchDrivers } from '../Drivers/useDrivers'
+import { fetchPosition, FetchPositionProps, PositionInterface } from '../Position/usePosition'
 
 /** 날짜 기준으로 가장 마지막 값을 기준으로 순위를 찾는 함수 */
 const getLatestPositions = (positions: PositionInterface[]) => {
@@ -19,26 +20,32 @@ const getLatestPositions = (positions: PositionInterface[]) => {
 }
 
 export const useFetchDriversWithPosition = ({ meeting_key, session_key }: FetchPositionProps) => {
-  const { data: drivers, isSuccess: driversIsSuccess, error: driversError } = useFetchDrivers(session_key)
-  const {
-    data: positions,
-    isSuccess: positionsIsSuccess,
-    error: positionsError,
-  } = useFetchPosition({ meeting_key, session_key })
+  const [driversQuery, positionsQuery] = useSuspenseQueries({
+    queries: [
+      {
+        queryKey: ['drivers', session_key],
+        queryFn: () => fetchDrivers(session_key),
+      },
+      {
+        queryKey: ['positions', meeting_key, session_key],
+        queryFn: () => fetchPosition({ meeting_key, session_key }),
+      },
+    ],
+  })
 
-  const [mergedData, setMergedData] = useState<(DriversInterface & { position: PositionInterface | undefined })[]>([])
+  const drivers = driversQuery.data as DriversInterface[]
+  const positions = positionsQuery.data as PositionInterface[]
 
-  useEffect(() => {
-    if (driversIsSuccess && positionsIsSuccess) {
-      const latestPositions = getLatestPositions(positions)
-      const merged = drivers.map((driver) => ({
-        ...driver,
-        position: latestPositions.find((position) => position.driver_number === driver.driver_number),
-      }))
-      merged.sort((a, b) => (a.position?.position ?? Infinity) - (b.position?.position ?? Infinity))
-      setMergedData(merged)
-    }
+  // Merge drivers with their latest positions
+  const mergedData = useMemo(() => {
+    const latestPositions = getLatestPositions(positions)
+    const merged = drivers.map((driver) => ({
+      ...driver,
+      position: latestPositions.find((position) => position.driver_number === driver.driver_number),
+    }))
+    merged.sort((a, b) => (a.position?.position ?? Infinity) - (b.position?.position ?? Infinity))
+    return merged
   }, [drivers, positions])
 
-  return { mergedData, isSuccess: driversIsSuccess && positionsIsSuccess, error: driversError || positionsError }
+  return { mergedData }
 }
