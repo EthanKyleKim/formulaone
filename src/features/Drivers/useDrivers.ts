@@ -1,4 +1,3 @@
-import { useSuspenseQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 export interface DriversInterface {
@@ -19,11 +18,4 @@ export interface DriversInterface {
 export const fetchDrivers = async (session_key: number): Promise<DriversInterface[]> => {
   const response = await axios.get(`https://api.openf1.org/v1/drivers?session_key=${session_key}`)
   return response.data
-}
-
-export const useFetchDrivers = (session_key: number) => {
-  return useSuspenseQuery<DriversInterface[], Error>({
-    queryKey: ['drivers', session_key],
-    queryFn: () => fetchDrivers(session_key),
-  })
 }
