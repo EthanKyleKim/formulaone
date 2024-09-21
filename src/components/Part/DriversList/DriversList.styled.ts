@@ -14,6 +14,7 @@ export const DriversContainer = styled.div`
 
 export const DriverCard = styled.div<DriverCardProps>`
   zoom: 80%;
+  height: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,6 +39,7 @@ export const DriverPosition = styled.div``
 export const DriverImage = styled.img`
   border-radius: 50%;
   width: 100px;
+  height: 100px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 `
 
