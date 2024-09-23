@@ -1,4 +1,4 @@
-import Main from '../../containers/Main/Main'
+import Main from '../../components/Page/Main/Main'
 
 export default async function InformationPage() {
   return <Main />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Block } from './SkeletonBlock.styled'
+import { StyledSkeletonBlock } from './SkeletonBlock.styled'
 
 interface SkeletonBlockProps {
   width?: string
@@ -7,5 +7,5 @@ interface SkeletonBlockProps {
 }
 
 export default function SkeletonBlock({ width, height }: SkeletonBlockProps) {
-  return <Block width={width} height={height} />
+  return <StyledSkeletonBlock width={width} height={height} />
 }

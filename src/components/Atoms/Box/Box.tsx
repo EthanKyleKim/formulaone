@@ -1,3 +1,4 @@
+// src/components/Atoms/Box/Box.tsx
 import React from 'react'
 import { StyledBox } from './Box.styled'
 
@@ -27,6 +28,11 @@ interface BoxProps {
   overflow?: string
   maxHeight?: string
   maxWidth?: string
+  flexWrap?: string
+  boxShadowHover?: string
+  transformHover?: string
+  transition?: string
+  zoom?: string
 }
 
 export default function Box({

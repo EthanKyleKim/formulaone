@@ -1,10 +1,10 @@
 import React from 'react'
-import { Circle } from './SkeletonCircle.styled'
+import { StyledSkeletonCircle } from './SkeletonCircle.styled'
 
 interface SkeletonCircleProps {
   size?: string
 }
 
 export default function SkeletonCircle({ size }: SkeletonCircleProps) {
-  return <Circle size={size} />
+  return <StyledSkeletonCircle size={size} />
 }
