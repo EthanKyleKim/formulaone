@@ -1,21 +1,23 @@
-// Atoms/SkeletonBlock.tsx
 import styled, { keyframes } from 'styled-components'
 import { Colors } from '../../../styles/Colors'
 
-const shimmer = keyframes`
+// Opacity 변화를 이용해 천천히 껌벅거리는 효과
+const blink = keyframes`
   0% {
-    background-position: -200px 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
   }
   100% {
-    background-position: 200px 0;
+    opacity: 1;
   }
 `
 
-export const SkeletonBlock = styled.div<{ width?: string; height?: string }>`
-  background: linear-gradient(90deg, ${Colors.gray750} 25%, ${Colors.gray870} 50%, ${Colors.gray750} 75%);
-  background-size: 400% 100%;
+export const StyledSkeletonBlock = styled.div<{ width?: string; height?: string }>`
+  background-color: ${Colors.gray750};
   border-radius: 4px;
   width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || '16px'};
-  animation: ${shimmer} 1.5s infinite linear;
+  animation: ${blink} 2s ease-in-out infinite; // 천천히 껌벅거리는 애니메이션
 `

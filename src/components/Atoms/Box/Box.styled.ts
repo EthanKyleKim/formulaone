@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { Colors } from '../../../styles/Colors'
+// src/components/Atoms/Box/Box.styled.ts
+import styled, { css } from 'styled-components'
 
-interface BoxProps {
+interface StyledBoxProps {
   top?: string
   bottom?: string
   left?: string
@@ -20,51 +20,57 @@ interface BoxProps {
   flexDirection?: string
   justifyContent?: string
   alignItems?: string
+  textAlign?: string
   width?: string
   height?: string
   overflow?: string
-  maxWidth?: string
   maxHeight?: string
+  maxWidth?: string
+  flexWrap?: string
+  boxShadowHover?: string
+  transformHover?: string
+  transition?: string
+  zoom?: string
 }
 
-export const StyledBox = styled.div<BoxProps>`
-  position: ${({ position }) => position};
-  top: ${({ top }) => top};
-  bottom: ${({ bottom }) => bottom};
-  left: ${({ left }) => left};
-  right: ${({ right }) => right};
-  z-index: ${({ zIndex }) => zIndex};
-  padding: ${({ padding }) => padding || '0'};
-  margin: ${({ margin }) => margin || '0'};
-  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
-  border-top-left-radius: ${({ borderRadius, borderTopRadius }) => borderTopRadius || borderRadius || '8px'};
-  border-top-right-radius: ${({ borderRadius, borderTopRadius }) => borderTopRadius || borderRadius || '8px'};
-  border-bottom-left-radius: ${({ borderRadius, borderBottomRadius }) => borderBottomRadius || borderRadius || '8px'};
-  border-bottom-right-radius: ${({ borderRadius, borderBottomRadius }) => borderBottomRadius || borderRadius || '8px'};
-  box-shadow: ${({ boxShadow }) => boxShadow || '0 4px 8px rgba(0, 0, 0, 0.1)'};
-  display: ${({ display }) => display || 'block'};
-  gap: ${({ gap }) => gap};
-  flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
-  justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
-  align-items: ${({ alignItems }) => alignItems || 'stretch'};
-  width: ${({ width }) => width || 'auto'};
-  height: ${({ height }) => height || 'auto'};
-  overflow: ${({ overflow }) => overflow || 'auto'};
-  max-width: ${({ maxWidth }) => maxWidth || 'none'};
-  max-height: ${({ maxHeight }) => maxHeight || 'none'};
+export const StyledBox = styled.div<StyledBoxProps>`
+  ${({ top }) => top && `top: ${top};`}
+  ${({ bottom }) => bottom && `bottom: ${bottom};`}
+  ${({ left }) => left && `left: ${left};`}
+  ${({ right }) => right && `right: ${right};`}
+  ${({ zIndex }) => zIndex && `z-index: ${zIndex};`}
+  ${({ position }) => position && `position: ${position};`}
+  ${({ padding }) => padding && `padding: ${padding};`}
+  ${({ margin }) => margin && `margin: ${margin};`}
+  ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor};`}
+  ${({ borderRadius }) => borderRadius && `border-radius: ${borderRadius};`}
+  ${({ borderTopRadius }) =>
+    borderTopRadius && `border-top-left-radius: ${borderTopRadius}; border-top-right-radius: ${borderTopRadius};`}
+  ${({ borderBottomRadius }) =>
+    borderBottomRadius &&
+    `border-bottom-left-radius: ${borderBottomRadius}; border-bottom-right-radius: ${borderBottomRadius};`}
+  ${({ boxShadow }) => boxShadow && `box-shadow: ${boxShadow};`}
+  ${({ display }) => display && `display: ${display};`}
+  ${({ gap }) => gap && `gap: ${gap};`}
+  ${({ flexDirection }) => flexDirection && `flex-direction: ${flexDirection};`}
+  ${({ justifyContent }) => justifyContent && `justify-content: ${justifyContent};`}
+  ${({ alignItems }) => alignItems && `align-items: ${alignItems};`}
+  ${({ textAlign }) => textAlign && `text-align: ${textAlign};`}
+  ${({ width }) => width && `width: ${width};`}
+  ${({ height }) => height && `height: ${height};`}
+  ${({ overflow }) => overflow && `overflow: ${overflow};`}
+  ${({ maxHeight }) => maxHeight && `max-height: ${maxHeight};`}
+  ${({ maxWidth }) => maxWidth && `max-width: ${maxWidth};`}
+  ${({ flexWrap }) => flexWrap && `flex-wrap: ${flexWrap};`}
+  ${({ transition }) => transition && `transition: ${transition};`}
+  ${({ zoom }) => zoom && `zoom: ${zoom};`}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 12px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: ${Colors.gray600};
-    border-radius: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: ${Colors.secondary};
-    border-radius: 8px;
-  }
+  ${({ boxShadowHover, transformHover }) =>
+    (boxShadowHover || transformHover) &&
+    css`
+      &:hover {
+        ${boxShadowHover && `box-shadow: ${boxShadowHover};`}
+        ${transformHover && `transform: ${transformHover};`}
+      }
+    `}
 `
