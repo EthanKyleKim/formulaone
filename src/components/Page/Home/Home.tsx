@@ -1,11 +1,11 @@
-import RadioMessage from '../RadioMessage/RadioMessage'
-import Slideshow from '../Slideshow/Slideshow'
+import HomeMessage from '../../Organisms/HomeMessage/HomeMessage'
+import Slideshow from '../../Organisms/TeamLines/TeamLines'
 
 export default function Home() {
-    return (
-        <>
-            <Slideshow />
-            <RadioMessage />
-        </>
-    )
+  return (
+    <>
+      <Slideshow />
+      <HomeMessage />
+    </>
+  )
 }
