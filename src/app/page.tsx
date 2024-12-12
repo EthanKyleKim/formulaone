@@ -1,13 +1,11 @@
 'use client'
 
-import HomeMessage from '../components/Organisms/HomeMessage/HomeMessage'
-import Scene from '../components/Organisms/TeamLines/TeamLines'
+import Home from '../components/Page/Home/Home'
 
 export default function HomePage() {
   return (
     <>
-      <Scene />
-      <HomeMessage />
+      <Home />
     </>
   )
 }

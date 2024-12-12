@@ -31,16 +31,16 @@ export default function Header() {
         </div>
         <div>
           <NavBar>
-            <Link href="/information" passHref style={{ textDecoration: 'none', marginRight: '40px' }}>
+            <Link href="/information" passHref style={{ textDecoration: 'none' }}>
               <Typography variant="body1" color={Colors.white}>
                 Information
               </Typography>
             </Link>
-            <Link href="/livesession" passHref style={{ textDecoration: 'none' }}>
+            {/* <Link href="/livesession" passHref style={{ textDecoration: 'none' }}>
               <Typography variant="body1" color={Colors.white}>
                 LiveSession
               </Typography>
-            </Link>
+            </Link> */}
           </NavBar>
         </div>
       </Box>
