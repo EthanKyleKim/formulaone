@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import styled from 'styled-components'
 import HomeMessage from '../../Organisms/HomeMessage/HomeMessage'
+import { Mesh } from 'three'
 
 // Canvas를 감싸는 컨테이너
 const CanvasContainer = styled.div`
@@ -22,7 +23,7 @@ function Model({ url, metalness }: ModelProps) {
   const { scene } = useGLTF(url)
 
   scene.traverse((child) => {
-    if (child.isMesh) {
+    if (child instanceof Mesh) {
       child.material.metalness = metalness
     }
   })
