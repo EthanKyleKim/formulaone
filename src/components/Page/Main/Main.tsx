@@ -30,6 +30,7 @@ export default function Main() {
           <Meeting />
         </ErrorBoundaryWrapper>
       </CardWithHeader>
+      
       <CardWithHeader headerText="세션 정보" width="75vw" height="93vh">
         <ErrorBoundaryWrapper
           fallbackComponent={ErrorPage}
