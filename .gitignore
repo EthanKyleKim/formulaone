@@ -27,6 +27,3 @@ dist-ssr
 .next
 next-env.d.ts
 dist
-
-# 3D Rendering
-/public/GraphicModel/
