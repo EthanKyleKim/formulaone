@@ -8,14 +8,14 @@ import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
 export default function SessionsList() {
   const [isSelectedSession, setIsSelectedSession] = useState<string | null>(null)
   const {
-    meetingState: { countryName },
+    meetingState: { countryName, location },
     setSelectedSession,
   } = useSliceMergeStore()
-  const { data } = useSessionsFetch(countryName)
+  const { data } = useSessionsFetch(countryName || '', location || '')
 
   useEffect(() => {
     setIsSelectedSession(null)
-  }, [countryName])
+  }, [countryName, location])
 
   const handleSessionClick = (session: SessionInterface) => {
     setSelectedSession(session)

@@ -19,14 +19,16 @@ export interface SessionInterface {
   year: number
 }
 
-export const fetchSessions = async (country_name: string): Promise<SessionInterface[]> => {
-  const response = await axios.get(`https://api.openf1.org/v1/sessions?country_name=${country_name}&year=2024`)
+export const fetchSessions = async (country_name: string, location: string): Promise<SessionInterface[]> => {
+  const response = await axios.get(
+    `https://api.openf1.org/v1/sessions?country_name=${country_name}&location=${location}&year=2024`,
+  )
   return response.data
 }
 
-export const useSessionsFetch = (country_name: string) => {
+export const useSessionsFetch = (country_name: string, location: string) => {
   return useSuspenseQuery<SessionInterface[], Error>({
-    queryKey: ['sessions', country_name],
-    queryFn: () => fetchSessions(country_name),
+    queryKey: ['sessions', country_name, location],
+    queryFn: () => fetchSessions(country_name, location),
   })
 }
