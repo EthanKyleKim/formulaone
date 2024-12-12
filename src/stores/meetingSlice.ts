@@ -5,6 +5,7 @@ import { MeetingInterface } from '../features/Meetings/useMeetings'
 export interface MeetingSliceInterface {
   meetingState: {
     countryName: MeetingInterface['country_name'] | null
+    location: MeetingInterface['location'] | null
   }
   setSelectedMeeting: (meeting: MeetingInterface | null) => void
 }
@@ -12,10 +13,11 @@ export interface MeetingSliceInterface {
 export const meetingSlice: StateCreator<MeetingSliceInterface & Partial<sessionSliceInterface>> = (set, get) => ({
   meetingState: {
     countryName: null,
+    location: null,
   },
   setSelectedMeeting: (meeting: MeetingInterface | null) => {
     set({
-      meetingState: { countryName: meeting?.country_name || null },
+      meetingState: { countryName: meeting?.country_name || null, location: meeting?.location || null },
     })
     // meeting 선택시 session 정보 초기화
     const resetSessionState = get().resetSessionState
