@@ -14,6 +14,7 @@ export default function Header() {
   return (
     <header>
       <Box
+        borderRadius="0"
         position="fixed"
         zIndex="100"
         top="0"
@@ -27,7 +28,9 @@ export default function Header() {
         backgroundColor={Colors.backgroundColor}
       >
         <div>
-          <Typography variant="h1">F1 INFO</Typography>
+          <Link href="/" passHref style={{ textDecoration: 'none' }}>
+            <Typography variant="h1">F1 INFO</Typography>
+          </Link>
         </div>
         <div>
           <NavBar>
@@ -36,11 +39,6 @@ export default function Header() {
                 Information
               </Typography>
             </Link>
-            {/* <Link href="/livesession" passHref style={{ textDecoration: 'none' }}>
-              <Typography variant="body1" color={Colors.white}>
-                LiveSession
-              </Typography>
-            </Link> */}
           </NavBar>
         </div>
       </Box>

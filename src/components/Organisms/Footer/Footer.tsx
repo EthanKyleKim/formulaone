@@ -23,7 +23,7 @@ const IconLink = styled.a`
 export default function Footer() {
   return (
     <StyledFooter>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
+      <Box display="flex" alignItems="center" justifyContent="space-between" borderRadius='0'>
         <Box display="flex" gap="32px">
           <Box>
             <Typography variant="body1">Made By</Typography>
@@ -40,7 +40,7 @@ export default function Footer() {
           </IconLink>
         </Box>
       </Box>
-      <Box display="flex">
+      <Box display="flex" borderRadius='0'>
         <Typography variant="caption3">
           F1 INFO is an unofficial project and is not associated in any way with the Formula 1 companies. F1, FORMULA
           ONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trademarks of Formula One

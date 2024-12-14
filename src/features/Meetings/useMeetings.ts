@@ -18,13 +18,12 @@ export interface MeetingInterface {
 
 export const fetchMeetings = async (): Promise<MeetingInterface[]> => {
   const response = await axios.get(`https://api.openf1.org/v1/meetings?year=2024`)
-  return response.data
+  return response.data.reverse() // 서버에서 역순 정렬
 }
 
 export const useFetchMeetings = () => {
   return useSuspenseQuery<MeetingInterface[], Error>({
     queryKey: ['meetings'],
     queryFn: fetchMeetings,
-    select: (data) => data.reverse(), // 최신순으로 정렬
   })
 }
