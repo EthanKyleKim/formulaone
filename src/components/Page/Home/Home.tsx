@@ -52,7 +52,7 @@ function ThreeJsRender() {
 
         {/* 3D 모델 */}
         <Suspense fallback={null}>
-          <Model url="./GraphicModel/scene.gltf" metalness={1} />
+          <Model url="./GraphicModel/scene.glb" metalness={1} />
         </Suspense>
 
         {/* 카메라 컨트롤 */}
