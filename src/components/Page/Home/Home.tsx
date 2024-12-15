@@ -4,7 +4,8 @@ import { Suspense } from 'react'
 import styled from 'styled-components'
 import HomeMessage from '../../Organisms/HomeMessage/HomeMessage'
 import { Mesh } from 'three'
-import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader.js'
+// @ts-expect-error: TypeScript가 KTX2Loader의 타입을 인식하지 못합니다.
+import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader'
 
 // Canvas를 감싸는 컨테이너
 const CanvasContainer = styled.div`
