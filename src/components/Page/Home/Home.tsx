@@ -1,9 +1,11 @@
 import { OrbitControls, useGLTF } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useThree } from '@react-three/fiber'
 import { Suspense } from 'react'
 import styled from 'styled-components'
 import HomeMessage from '../../Organisms/HomeMessage/HomeMessage'
 import { Mesh } from 'three'
+// @ts-expect-error: TypeScript가 KTX2Loader의 타입을 인식하지 못합니다.
+import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader'
 
 // Canvas를 감싸는 컨테이너
 const CanvasContainer = styled.div`
@@ -20,7 +22,13 @@ interface ModelProps {
 }
 
 function Model({ url, metalness }: ModelProps) {
-  const { scene } = useGLTF(url)
+  const { gl } = useThree()
+  const { scene } = useGLTF(url, undefined, undefined, (loader) => {
+    const ktx2Loader = new KTX2Loader()
+      .setTranscoderPath('/basis/') // Basis Transcoder 경로
+      .detectSupport(gl) // WebGLRenderer 지원 확인
+    loader.setKTX2Loader(ktx2Loader)
+  })
 
   scene.traverse((child) => {
     if (child instanceof Mesh) {
@@ -52,7 +60,7 @@ function ThreeJsRender() {
 
         {/* 3D 모델 */}
         <Suspense fallback={null}>
-          <Model url="./GraphicModel/scene.glb" metalness={1} />
+          <Model url="./GraphicModel/sceneKTX-ETC1S-quality255.glb" metalness={1} />
         </Suspense>
 
         {/* 카메라 컨트롤 */}
