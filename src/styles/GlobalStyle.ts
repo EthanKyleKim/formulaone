@@ -1,4 +1,5 @@
-// styles/GlobalStyle.js
+'use client'
+
 import { createGlobalStyle } from 'styled-components'
 import { Colors } from './Colors'
 
