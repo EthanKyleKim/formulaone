@@ -10,15 +10,21 @@ import Meeting from '../../Organisms/Meeting/Meeting'
 import { Container } from './Main.styled'
 import ProfileCardList from '../../Organisms/ProfileCardList/ProfileCardList'
 import SkeletonProfilesList from '../../Organisms/SkeletonProfileCardList/SkeletonProfileCardList'
+import { useEffect } from 'react'
 
 export default function Main() {
   const {
     meetingState: { countryName },
+    sessionState: { session_key, meeting_key },
+    resetMeetingState,
+    resetSessionState,
   } = useSliceMergeStore()
 
-  const {
-    sessionState: { session_key, meeting_key },
-  } = useSliceMergeStore()
+  // 최초 접근시 store 초기화
+  useEffect(() => {
+    resetMeetingState()
+    resetSessionState()
+  }, [])
 
   return (
     <Container>
@@ -30,7 +36,7 @@ export default function Main() {
           <Meeting />
         </ErrorBoundaryWrapper>
       </CardWithHeader>
-      
+
       <CardWithHeader headerText="세션 정보" width="75vw" height="93vh">
         <ErrorBoundaryWrapper
           fallbackComponent={ErrorPage}
