@@ -8,6 +8,7 @@ export interface MeetingSliceInterface {
     location: MeetingInterface['location'] | null
   }
   setSelectedMeeting: (meeting: MeetingInterface | null) => void
+  resetMeetingState: () => void
 }
 
 export const meetingSlice: StateCreator<MeetingSliceInterface & Partial<sessionSliceInterface>> = (set, get) => ({
@@ -25,4 +26,11 @@ export const meetingSlice: StateCreator<MeetingSliceInterface & Partial<sessionS
       resetSessionState()
     }
   },
+  resetMeetingState: () =>
+    set({
+      meetingState: {
+        countryName: null,
+        location: null,
+      },
+    }),
 })
