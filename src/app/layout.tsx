@@ -1,5 +1,3 @@
-'use client'
-
 import Providers from '../util/provider'
 import '../font.css'
 import StyledComponentsRegistry from '../../lib/registry'
