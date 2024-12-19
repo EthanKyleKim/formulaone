@@ -1,4 +1,3 @@
-// src/components/molecules/CardWithHeader/CardWithHeader.tsx
 import React from 'react'
 import Box from '../../Atoms/Box/Box'
 import { Colors } from '../../../styles/Colors'

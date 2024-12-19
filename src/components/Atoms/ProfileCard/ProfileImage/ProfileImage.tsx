@@ -1,4 +1,3 @@
-// src/components/Atoms/ProfileImage/ProfileImage.tsx
 import styled from 'styled-components'
 
 export const ProfileImage = styled.img`

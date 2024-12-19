@@ -1,10 +1,7 @@
-// src/components/Molecules/SkeletonProfileCard/SkeletonProfileCard.tsx
-import React from 'react'
-import Box from '../../Atoms/Box/Box'
-import Typography from '../../Atoms/Typography/Typography'
-import SkeletonBlock from '../../Atoms/Skeleton/SkeletonBlock'
-import SkeletonCircle from '../../Atoms/Skeleton/SkeletonCircle'
 import { Colors } from '../../../styles/Colors'
+import Box from '../../Atoms/Box/Box'
+import Skeleton from '../../Atoms/Skeleton/Skeleton'
+import Typography from '../../Atoms/Typography/Typography'
 
 export default function SkeletonProfileCard() {
   return (
@@ -23,14 +20,14 @@ export default function SkeletonProfileCard() {
       zoom="80%"
     >
       <Typography variant="h1">
-        <SkeletonBlock width="90px" height="58.75px" />
+        <Skeleton type="block" width="90px" height="58.75px" />
       </Typography>
-      <SkeletonCircle size="100px" />
+      <Skeleton type="circle" size="100px" />
       <Typography variant="h4">
-        <SkeletonBlock width="185px" height="57.5px" />
+        <Skeleton type="block" width="185px" height="57.5px" />
       </Typography>
       <Typography variant="body1">
-        <SkeletonBlock width="140px" height="24px" />
+        <Skeleton type="block" width="140px" height="24px" />
       </Typography>
     </Box>
   )
