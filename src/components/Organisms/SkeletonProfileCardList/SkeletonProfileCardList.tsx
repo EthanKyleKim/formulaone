@@ -1,5 +1,5 @@
-import SkeletonProfileCard from '../../Molecules/SkeletonProfileCard/SkeletonProfileCard'
 import Box from '../../Atoms/Box/Box'
+import SkeletonProfileCard from '../../Molecules/SkeletonProfileCard/SkeletonProfileCard'
 
 interface SkeletonProfilesListProps {
   count: number

@@ -1,11 +1,5 @@
-// src/components/atoms/List/List.styles.ts
 import styled from 'styled-components'
 import { Colors } from '../../../styles/Colors'
-
-interface StyledListProps {
-  display?: string
-  flexDirection?: string
-}
 
 interface StyledLiProps {
   display?: string
@@ -17,16 +11,7 @@ interface StyledLiProps {
   $isSelected?: boolean
 }
 
-export const StyledList = styled.ul<StyledListProps>`
-  display: ${({ display }) => display || 'block'};
-  flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
-  list-style: none;
-  padding: 16px;
-  margin: 0;
-  gap: 16px;
-`
-
-export const StyledListItem = styled.li<StyledLiProps>`
+export const Li = styled.li<StyledLiProps>`
   zoom: 80%;
   display: ${({ display }) => display || 'block'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
@@ -35,9 +20,7 @@ export const StyledListItem = styled.li<StyledLiProps>`
   padding: 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   width: ${({ width }) => width || 'auto'};
   height: ${({ height }) => height || 'auto'};
   background-color: ${({ $isSelected }) => ($isSelected ? Colors.primary : Colors.secondary)}; // 선택된 경우의 배경색

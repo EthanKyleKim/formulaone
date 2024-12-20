@@ -1,6 +1,5 @@
-// src/components/Molecules/SkeletonList/SkeletonList.tsx
-import { List, ListItem } from '../../Atoms/List/List'
 import Skeleton from '../../Atoms/Skeleton/Skeleton'
+import { List, ListItem } from '../../Molecules/List/List'
 
 interface SkeletonListProps {
   count: number

@@ -1,4 +1,3 @@
-// src/features/sessions/useSessionsFetch.ts
 import { useSuspenseQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
@@ -20,6 +19,10 @@ export interface SessionInterface {
 }
 
 export const fetchSessions = async (country_name: string, location: string): Promise<SessionInterface[]> => {
+  if (!country_name || !location) {
+    return []
+  }
+
   const response = await axios.get(
     `https://api.openf1.org/v1/sessions?country_name=${country_name}&location=${location}&year=2024`,
   )

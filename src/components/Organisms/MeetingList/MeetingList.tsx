@@ -1,12 +1,10 @@
-// src/components/Organisms/Meeting/Meeting.tsx
-
-import { List, ListItem } from '../../Atoms/List/List'
 import { MeetingInterface, useFetchMeetings } from '../../../features/Meetings/useMeetings'
 import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
 import Typography from '../../Atoms/Typography/Typography'
 import { useState } from 'react'
+import { List, ListItem } from '../../Molecules/List/List'
 
-export default function Meeting() {
+export default function MeetingList() {
   const { setSelectedMeeting } = useSliceMergeStore()
   const [isSelectedmeeting_key, setIsSelectedMeeting] = useState<string | null>(null)
   const { data } = useFetchMeetings()

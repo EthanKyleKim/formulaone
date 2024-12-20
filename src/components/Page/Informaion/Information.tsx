@@ -1,16 +1,16 @@
 'use client'
 
+import { useEffect } from 'react'
+import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
+import { InformaionContainer } from '../../Templates/InformaionContainer'
 import ErrorBoundaryWrapper from '../../ErrorBoundaryWrapper'
 import ErrorPage from '../../ErrorPage'
-import CardWithHeader from '../../Molecules/CardWithHeader/CardWithHeader'
-import SkeletonList from '../../Molecules/SkeletonList/SkeletonList'
+import SkeletonList from '../../Organisms/SkeletonList/SkeletonList'
+import MeetingList from '../../Organisms/MeetingList/MeetingList'
 import SessionsList from '../../Organisms/SessionsList/SessionsList'
-import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
-import Meeting from '../../Organisms/Meeting/Meeting'
-import { Container } from './Main.styled'
-import ProfileCardList from '../../Organisms/ProfileCardList/ProfileCardList'
 import SkeletonProfilesList from '../../Organisms/SkeletonProfileCardList/SkeletonProfileCardList'
-import { useEffect } from 'react'
+import ProfileCardList from '../../Organisms/ProfileCardList/ProfileCardList'
+import StickyTitleWithCard from '../../Molecules/StickyTitleWithCard/StickyTitleWithCard'
 
 export default function Main() {
   const {
@@ -27,17 +27,17 @@ export default function Main() {
   }, [])
 
   return (
-    <Container>
-      <CardWithHeader headerText="2024 F1 GP 일정" width="21vw" height="93vh">
+    <InformaionContainer>
+      <StickyTitleWithCard titleText="2024 F1 GP 일정" width="21vw" height="93vh">
         <ErrorBoundaryWrapper
           fallbackComponent={ErrorPage}
           suspenseFallback={<SkeletonList count={10} flexDirection="column" height="80px" />}
         >
-          <Meeting />
+          <MeetingList />
         </ErrorBoundaryWrapper>
-      </CardWithHeader>
+      </StickyTitleWithCard>
 
-      <CardWithHeader headerText="세션 정보" width="75vw" height="93vh">
+      <StickyTitleWithCard titleText="세션 정보" width="75vw" height="93vh">
         <ErrorBoundaryWrapper
           fallbackComponent={ErrorPage}
           suspenseFallback={<SkeletonList count={5} flexDirection="row" width="100%" height="30px" />}
@@ -47,7 +47,7 @@ export default function Main() {
         <ErrorBoundaryWrapper fallbackComponent={ErrorPage} suspenseFallback={<SkeletonProfilesList count={20} />}>
           {session_key && meeting_key && <ProfileCardList />}
         </ErrorBoundaryWrapper>
-      </CardWithHeader>
-    </Container>
+      </StickyTitleWithCard>
+    </InformaionContainer>
   )
 }

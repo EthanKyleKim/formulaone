@@ -16,14 +16,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "strict": false,                // 엄격한 검사 비활성화
-    "noUnusedLocals": false,        // 사용하지 않는 변수 무시
-    "noUnusedParameters": false,    // 사용하지 않는 매개변수 무시
+    "strict": false, // 엄격한 검사 비활성화
+    "noUnusedLocals": false, // 사용하지 않는 변수 무시
+    "noUnusedParameters": false, // 사용하지 않는 매개변수 무시
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
-    "noEmitOnError": false,         // 오류가 있어도 빌드 허용
+    "noEmitOnError": false, // 오류가 있어도 빌드 허용
     "plugins": [
       {
         "name": "next"

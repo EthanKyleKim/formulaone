@@ -1,11 +1,11 @@
-// src/components/Molecules/CardWithHeader/CardWithHeader.stories.tsx
+// src/components/Molecules/StickyTitleWithCard/StickyTitleWithCard.stories.tsx
 import React from 'react'
-import CardWithHeader from './CardWithHeader'
+import StickyTitleWithCard from './StickyTitleWithCard'
 import Box from '../../Atoms/Box/Box'
 
 export default {
-  title: 'Molecules/CardWithHeader',
-  component: CardWithHeader,
+  title: 'Molecules/StickyTitleWithCard',
+  component: StickyTitleWithCard,
   argTypes: {
     headerText: { control: 'text' },
     width: { control: 'text' },
@@ -15,11 +15,11 @@ export default {
 }
 
 export const Default = (args) => (
-  <CardWithHeader {...args}>
+  <StickyTitleWithCard {...args}>
     <Box backgroundColor="#ddd" height="100%">
       This is the content inside the card.
     </Box>
-  </CardWithHeader>
+  </StickyTitleWithCard>
 )
 
 Default.args = {

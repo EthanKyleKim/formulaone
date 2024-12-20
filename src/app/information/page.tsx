@@ -1,5 +1,5 @@
-import Main from '../../components/Page/Main/Main'
+import Information from '../../components/Page/Informaion/Information'
 
 export default async function InformationPage() {
-  return <Main />
+  return <Information />
 }

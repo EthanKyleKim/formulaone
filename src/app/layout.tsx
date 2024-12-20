@@ -2,8 +2,8 @@ import Providers from '../util/provider'
 import '../font.css'
 import StyledComponentsRegistry from '../../lib/registry'
 import GlobalStyle from '../styles/GlobalStyle'
-import Header from '../components/Organisms/Header/Header'
-import Footer from '../components/Organisms/Footer/Footer'
+import Header from '../components/Molecules/Header/Header'
+import Footer from '../components/Molecules/Footer/Footer'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

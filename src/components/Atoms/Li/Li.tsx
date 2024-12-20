@@ -1,13 +1,4 @@
-// src/components/Atoms/List/List.tsx
-import React from 'react'
-import { StyledList, StyledListItem } from './List.styled'
-
-interface ListProps {
-  children: React.ReactNode
-  flexDirection?: string
-  alignItems?: string
-  display?: string
-}
+import { Li } from './Li.styled'
 
 interface ListItemProps {
   children: React.ReactNode
@@ -18,15 +9,6 @@ interface ListItemProps {
   onClick?: () => void
   isSelected?: boolean
 }
-
-export function List({ children, flexDirection = 'row', display = 'flex' }: ListProps) {
-  return (
-    <StyledList display={display} flexDirection={flexDirection}>
-      {children}
-    </StyledList>
-  )
-}
-
 export function ListItem({
   children,
   width,
@@ -37,7 +19,7 @@ export function ListItem({
   isSelected,
 }: ListItemProps) {
   return (
-    <StyledListItem
+    <Li
       display={display}
       width={width}
       height={height}
@@ -46,6 +28,6 @@ export function ListItem({
       $isSelected={isSelected}
     >
       {children}
-    </StyledListItem>
+    </Li>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import Box from '../../Atoms/Box/Box'
 
 import { Colors } from '../../../styles/Colors'
-import { ProfileImage } from '../../Atoms/ProfileCard/ProfileImage/ProfileImage'
+import { Image } from '../../Atoms/Image/Image'
 import Typography from '../../Atoms/Typography/Typography'
 
 interface ProfileCardProps {
@@ -40,7 +40,7 @@ export default function ProfileCard({ position, name, teamName, teamColor, image
       zoom="80%"
     >
       <Typography variant="h1">{`${position}${rankSuffix(position)}`}</Typography>
-      <ProfileImage src={imageSrc} alt={imageAlt} />
+      <Image src={imageSrc} alt={imageAlt} />
       <Typography variant="h4">{name.replace(/ /g, '\n')}</Typography>
       <Typography variant="body1" color={`#${teamColor}`}>
         {teamName}
