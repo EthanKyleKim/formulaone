@@ -2,6 +2,9 @@
 
 <img src="https://github.com/user-attachments/assets/5bee3e52-df1d-4175-aec1-818242416038" alt="favicon" width="200" height="200">
 
+F1 INFO is an unofficial project and is not associated in any way with the Formula 1 companies. F1, FORMULAONE, FORMULA 1, FIA FORMULA ONE WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trademarks of Formula One Licensing B.V.
+
+
 포뮬러 원 드라이버, 경기 및 세션에 대한 상세한 순위와 정보를 제공하기 위해 만들어졌습니다.
 
 ### Page: https://formulaoneinfo.vercel.app/
