@@ -1,12 +1,12 @@
 import { Colors } from './../../../styles/Colors'
 import styled from 'styled-components'
 
-interface StickyHeaderProps {
+interface StickyTitleProps {
   backgroundColor?: string
   height?: string
 }
 
-export const StickyTitle = styled.div<StickyHeaderProps>`
+export const StickyTitle = styled.div<StickyTitleProps>`
   position: sticky;
   top: 0;
   height: ${({ height }) => (height ? height : '60px')};
