@@ -1,4 +1,3 @@
-// src/components/Organisms/SessionsList/SessionsList.tsx
 import { useEffect, useState } from 'react'
 import Typography from '../../Atoms/Typography/Typography'
 import { SessionInterface, useSessionsFetch } from '../../../features/Sessions/useSessions'

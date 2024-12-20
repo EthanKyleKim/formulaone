@@ -1,5 +1,3 @@
-// Skeleton.tsx
-import React from 'react'
 import { StyledSkeleton } from './Skeleton.styled'
 
 interface SkeletonProps {

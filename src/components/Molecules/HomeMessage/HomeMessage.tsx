@@ -1,5 +1,3 @@
-// LeclercRadio.tsx
-
 import { Colors } from '../../../styles/Colors'
 import Box from '../../Atoms/Box/Box'
 import Typography from '../../Atoms/Typography/Typography'

@@ -1,5 +1,3 @@
-// src/components/Atoms/Box/Box.tsx
-import React from 'react'
 import { StyledBox } from './Box.styled'
 
 interface BoxProps {

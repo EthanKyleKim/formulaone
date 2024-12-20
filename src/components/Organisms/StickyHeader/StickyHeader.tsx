@@ -1,4 +1,3 @@
-import React from 'react'
 import { StyledStickyHeader } from './StickyHeader.styled'
 import Typography from '../../Atoms/Typography/Typography'
 

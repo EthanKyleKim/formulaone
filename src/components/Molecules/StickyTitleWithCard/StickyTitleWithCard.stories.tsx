@@ -1,4 +1,3 @@
-// src/components/Molecules/StickyTitleWithCard/StickyTitleWithCard.stories.tsx
 import React from 'react'
 import StickyTitleWithCard from './StickyTitleWithCard'
 import Box from '../../Atoms/Box/Box'

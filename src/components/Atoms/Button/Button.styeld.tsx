@@ -1,4 +1,3 @@
-// src/components/Button.js
 import styled from 'styled-components'
 import { Colors } from '../../../styles/Colors'
 

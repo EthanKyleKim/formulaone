@@ -1,4 +1,3 @@
-// src/components/Atoms/Box/Box.stories.tsx
 import React from 'react'
 import { Meta, StoryFn } from '@storybook/react';
 import Box from './Box'

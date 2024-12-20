@@ -1,4 +1,3 @@
-// src/components/Atoms/Box/Box.styled.ts
 import styled, { css } from 'styled-components'
 
 interface StyledBoxProps {

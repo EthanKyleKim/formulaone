@@ -1,4 +1,3 @@
-// src/components/Molecules/ProfileCard/ProfileCard.stories.tsx
 import React from 'react';
 import ProfileCard from './ProfileCard';
 

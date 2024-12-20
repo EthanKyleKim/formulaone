@@ -1,4 +1,3 @@
-import React from 'react'
 import Box from '../../Atoms/Box/Box'
 import { Colors } from '../../../styles/Colors'
 import { StickyTitle } from '../../Atoms/StickyTitle/StickyTitle'

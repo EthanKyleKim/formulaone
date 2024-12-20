@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import Box from '../../Atoms/Box/Box'
 import Typography from '../../Atoms/Typography/Typography'
 import { StyledFooter, StyledFooterIconLink } from './Footer.styled'

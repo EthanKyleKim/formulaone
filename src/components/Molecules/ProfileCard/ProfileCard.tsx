@@ -1,5 +1,3 @@
-// src/components/Molecules/ProfileCard/ProfileCard.tsx
-import React from 'react'
 import Box from '../../Atoms/Box/Box'
 
 import { Colors } from '../../../styles/Colors'
