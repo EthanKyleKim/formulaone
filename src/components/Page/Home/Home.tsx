@@ -2,7 +2,7 @@ import { OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas, useThree } from '@react-three/fiber'
 import { Suspense } from 'react'
 import styled from 'styled-components'
-import HomeMessage from '../../Organisms/HomeMessage/HomeMessage'
+import HomeMessage from '../../Molecules/HomeMessage/HomeMessage'
 import { Mesh } from 'three'
 // @ts-expect-error: TypeScript가 KTX2Loader의 타입을 인식하지 못합니다.
 import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader'

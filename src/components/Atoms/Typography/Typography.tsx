@@ -1,4 +1,3 @@
-import React from 'react'
 import { H1, H2, H3, H4, H5, Body1, Body2, Caption1, Caption2, Caption3 } from './Typography.styeld'
 
 type TypographyProps = {

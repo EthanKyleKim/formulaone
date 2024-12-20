@@ -1,12 +1,8 @@
-// src/components/Molecules/ProfileCard/ProfileCard.tsx
-import React from 'react'
 import Box from '../../Atoms/Box/Box'
 
 import { Colors } from '../../../styles/Colors'
-import ProfilePosition from '../../Atoms/ProfileCard/ProfilePosition/ProfilePosition'
-import { ProfileImage } from '../../Atoms/ProfileCard/ProfileImage/ProfileImage'
-import ProfileName from '../../Atoms/ProfileCard/ProfileName/ProfileName'
-import ProfileTeam from '../../Atoms/ProfileCard/ProfileTeam/ProfileTeam'
+import { Image } from '../../Atoms/Image/Image'
+import Typography from '../../Atoms/Typography/Typography'
 
 interface ProfileCardProps {
   position: number
@@ -18,6 +14,13 @@ interface ProfileCardProps {
 }
 
 export default function ProfileCard({ position, name, teamName, teamColor, imageSrc, imageAlt }: ProfileCardProps) {
+  const rankSuffix = (rank: number) => {
+    if (rank === 1) return 'st'
+    if (rank === 2) return 'nd'
+    if (rank === 3) return 'rd'
+    return 'th'
+  }
+
   return (
     <Box
       display="flex"
@@ -34,10 +37,12 @@ export default function ProfileCard({ position, name, teamName, teamColor, image
       transition="transform 0.3s ease, box-shadow 0.3s ease"
       zoom="80%"
     >
-      <ProfilePosition position={position} />
-      <ProfileImage src={imageSrc} alt={imageAlt} />
-      <ProfileName name={name} />
-      <ProfileTeam teamName={teamName} teamColor={teamColor} />
+      <Typography variant="h1">{`${position}${rankSuffix(position)}`}</Typography>
+      <Image src={imageSrc} alt={imageAlt} />
+      <Typography variant="h4">{name.replace(/ /g, '\n')}</Typography>
+      <Typography variant="body1" color={`#${teamColor}`}>
+        {teamName}
+      </Typography>
     </Box>
   )
 }

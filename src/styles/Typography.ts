@@ -1,5 +1,3 @@
-// src/styles/typography.ts
-
 export interface TypographyStyles {
   fontSize: string
   fontWeight: number

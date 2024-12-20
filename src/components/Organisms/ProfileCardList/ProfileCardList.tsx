@@ -1,9 +1,7 @@
-// src/components/Organisms/ProfilesList/ProfilesList.tsx
-import React from 'react'
 import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
-import ProfileCard from '../../Molecules/ProfileCard/ProfileCard'
 import Box from '../../Atoms/Box/Box'
 import { useFetchDriversWithPosition } from '../../../features/DriversWithPosition/DriversWithPosition'
+import ProfileCard from '../../Molecules/ProfileCard/ProfileCard'
 
 export default function ProfileCardList() {
   const {

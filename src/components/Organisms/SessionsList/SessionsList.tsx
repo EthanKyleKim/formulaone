@@ -1,9 +1,8 @@
-// src/components/Organisms/SessionsList/SessionsList.tsx
 import { useEffect, useState } from 'react'
-import { List, ListItem } from '../../Atoms/List/List'
 import Typography from '../../Atoms/Typography/Typography'
 import { SessionInterface, useSessionsFetch } from '../../../features/Sessions/useSessions'
 import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
+import { List, ListItem } from '../../Molecules/List/List'
 
 export default function SessionsList() {
   const [isSelectedSession, setIsSelectedSession] = useState<string | null>(null)
