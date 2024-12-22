@@ -7,7 +7,7 @@ F1 INFO is an unofficial project and is not associated in any way with the Formu
 
 포뮬러 원 드라이버, 경기 및 세션에 대한 상세한 순위와 정보를 제공하기 위해 만들어졌습니다.
 
-### Page: https://formulaoneinfo.vercel.app/
+### [![Formula One Info](https://img.shields.io/badge/Formula%20One%20Info-Online-000000?style=for-the-badge&logo=vercel)](https://formulaoneinfo.vercel.app/)
 
 
 # 🛠️ 기술 스택
