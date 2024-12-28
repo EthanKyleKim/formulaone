@@ -1,4 +1,4 @@
-import { Ul } from './Ul.styled'
+import { Ul } from './UnorderedList.styled'
 
 interface ListProps {
   children: React.ReactNode

@@ -1,5 +1,6 @@
+import { ListItem } from '../../Atoms/ListItem/ListItem'
 import Skeleton from '../../Atoms/Skeleton/Skeleton'
-import { List, ListItem } from '../../Molecules/List/List'
+import { List } from '../../Atoms/UnorderedList/UnorderedList'
 
 interface SkeletonListProps {
   count: number

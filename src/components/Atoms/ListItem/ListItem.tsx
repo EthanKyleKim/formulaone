@@ -1,4 +1,4 @@
-import { Li } from './Li.styled'
+import { Li } from './ListItem.styled'
 
 interface ListItemProps {
   children: React.ReactNode

@@ -1,6 +1,6 @@
 import Box from '../../Atoms/Box/Box'
 import { Colors } from '../../../styles/Colors'
-import { StickyTitle } from '../../Atoms/StickyTitle/StickyTitle'
+import { StickyTitle } from '../../Atoms/StickyTitle/StickyTitle.styeld'
 import Typography from '../../Atoms/Typography/Typography'
 
 interface StickyTitleWithCardProps {

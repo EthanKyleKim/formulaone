@@ -2,7 +2,8 @@ import { MeetingInterface, useFetchMeetings } from '../../../features/Meetings/u
 import { useSliceMergeStore } from '../../../stores/useSliceMergeStore'
 import Typography from '../../Atoms/Typography/Typography'
 import { useState } from 'react'
-import { List, ListItem } from '../../Molecules/List/List'
+import { List } from '../../Atoms/UnorderedList/UnorderedList'
+import { ListItem } from '../../Atoms/ListItem/ListItem'
 
 export default function MeetingList() {
   const { setSelectedMeeting } = useSliceMergeStore()
