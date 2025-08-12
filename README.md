@@ -44,10 +44,4 @@ Next.js, Zustand, React Query, Three.js 를 경험해보고 Atomic Design Patter
 # 기술적 도전과 해결 방법
 - [velog - F1 Info 작업 시리즈](https://velog.io/@ethankyle/series/F1-Info)
 
-# 향후 계획
-- Driver Car Information: 현재 DriverCard에 나오는 드라이버들의 각 레이스, 미팅에 따른 차량의 정보를 보여줄 예정입니다.
-- Storybook:초기 작업에 디자인 시스템을 구축하려는 마음이 앞서 Storybook 구축을 하지않았습니다. 현재 스토리북 구성을 진행중 입니다.
-
-  
-
 
